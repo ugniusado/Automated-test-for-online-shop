@@ -31,10 +31,10 @@ Automatic Test of the site www.varle.lt
         
  ## Usage of Class inheritance
  
- ###
+ ### Inheriting Class
  class VarlePage:Resize
     {}
- ###
+ ### Base Class
 class Resize
 {
         protected static IWebDriver Driver;
