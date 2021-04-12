@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Vcs.Page
 {
-    class VarlePage:Resize
+    class VarlePage : Resize
     {
         private static IWebDriver _driver;
-        public VarlePage(IWebDriver webdriver) :base(webdriver)
+        public VarlePage(IWebDriver webdriver) : base(webdriver)
         {
             _driver = webdriver;
         }
@@ -54,7 +54,7 @@ namespace Vcs.Page
             _driver.FindElement(By.CssSelector(".errorlist > li")).Click();
             Assert.That(_driver.FindElement(By.CssSelector(".errorlist > li")).Text, Is.EqualTo(result));
         }
-      
+
         private IWebElement _findDepartament1 => _driver.FindElement(By.CssSelector(".departments-links > .departments-item:nth-child(1) span"));
         public void _gotoDepartament()
         {
