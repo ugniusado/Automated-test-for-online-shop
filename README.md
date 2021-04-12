@@ -13,3 +13,19 @@ Automatic Test of the site www.varle.lt
 • *Usage of SetUp / TearDown *
 
 • *Usage of Explicit Wait *
+
+##Usage of SetUp/TearDown
+### [OneTimeSetUp]
+        public static void Setup()
+        {
+            _driver = new ChromeDriver();
+            _driver.Url = "https://www.varle.lt/";
+
+        }
+
+
+ ###  [OneTimeTearDown]
+        public static void TearDown()
+        {
+            _driver.Quit();
+        }
