@@ -10,17 +10,16 @@ Automatic Test of the site www.varle.lt
 
 • *There are so-called base classes inheritance*
 
-• *Usage of SetUp / TearDown *
+• *Usage of SetUp / TearDown*
 
-• *Usage of Explicit Wait *
+• *Usage of Explicit Wait*
 
-##Usage of SetUp/TearDown
+## Usage of SetUp/TearDown
 ### [OneTimeSetUp]
         public static void Setup()
         {
             _driver = new ChromeDriver();
             _driver.Url = "https://www.varle.lt/";
-
         }
 
 
