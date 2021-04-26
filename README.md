@@ -14,6 +14,18 @@ Automatic Test of the site www.varle.lt
 
 • *Usage of Explicit Wait*
 
+• *Usage of Base Class*
+
+• *Usage of automated error screenshots*
+
+## Tests that were made:
+
+• *Login error test(testing how site reacts, when login information is filled with intended mistakes)*
+
+• *Shopping basket(testing shopping basket and then asserting total value of basket)*
+
+• *Search of certain good in the shop
+
 ## Usage of SetUp/TearDown
 ### [OneTimeSetUp]
         public static void Setup()
