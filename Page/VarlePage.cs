@@ -12,12 +12,13 @@ namespace Vcs.Page
 {
     class VarlePage : Resize
     {
+        
         private static IWebDriver _driver;
         public VarlePage(IWebDriver webdriver) : base(webdriver)
         {
             _driver = webdriver;
         }
-        private IWebElement _loginHeader => _driver.FindElement(By.XPath("//a[@id='login_header']/p"));
+        private IWebElement _loginHeader => _driver.FindElement(By.XPath("/html/body/header/div[2]/div[3]/div[1]/a/img"));
         public void _clickLoginHeader()
         {
             _loginHeader.Click();

@@ -9,18 +9,19 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Vcs.Page;
+using VcsWebdriver.Test;
 
 namespace Vcs.Test
 {
-    class VarleTest
+    class VarleTest : BaseTest
     {
         private static IWebDriver _driver;
 
         [OneTimeSetUp]
         public static void Setup()
         {
-            _driver = new ChromeDriver();
-            _driver.Url = "https://www.varle.lt/";
+           _driver = new ChromeDriver();
+           _driver.Url = "https://www.varle.lt/";
 
         }
 
@@ -44,8 +45,8 @@ namespace Vcs.Test
             page._verifyLoginResult(result);
 
         }
-        [Test]
-        public static void TestIsPhoneAvailability()
+        [Test] ///Sio telefono jau nebera prekyboje, bet palikau testa, nes norejau, kad pamatytumet, kad screenshotai veikia :)
+        public static void TestIsPhoneAvailable()
         {
 
             VarlePage page = new VarlePage(_driver);
