@@ -28,6 +28,15 @@ Automatic Test of the site www.varle.lt
         {
             _driver.Quit();
         }
+   
+ ### [TearDown]
+        public static void TearDown()
+        {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                MyScreenshot.TakeScreenshot(driver);
+            }
+        }
         
  ## Usage of Class inheritance
  
@@ -35,26 +44,24 @@ Automatic Test of the site www.varle.lt
         class VarlePage:Resize
         {}
  ### Base Class
-        class Resize
-        {
+        public class BasePage
+    {
         protected static IWebDriver Driver;
 
-        public Resize(IWebDriver webdriver)
+        public BasePage(IWebDriver webdriver)
         {
             Driver = webdriver;
         }
-        public void _manageWindowSize()
-        {
-            Driver.Manage().Window.Size = new System.Drawing.Size(1920, 1080);
-        }
-        public void _CloseBrowser()
+
+        public void CloseBrowser()
         {
             Driver.Quit();
         }
-        public static void _screenShot()
+
+        public WebDriverWait GetWait(int seconds = 5)
         {
-            Screenshot ss = ((ITakesScreenshot)Driver).GetScreenshot();
-            ss.SaveAsFile(@"C:\Temp\Download\Image.png",
-            ScreenshotImageFormat.Png);
+            return new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
         }
+
     }
+}
